@@ -13,7 +13,7 @@ lista hossza alatt következőképpen definiált függvényt értjük:
 
 $\mathrm{Hossz}([]) = 0$
 
-$\mathrm{Hossz}([x]+L) \overset{\scalebox{.7}{def}}{=} \mathrm{Hossz}(L) + 1$
+$\mathrm{Hossz}([x]+L) \overset{\scalebox{0.7}{def}}{=} \mathrm{Hossz}(L) + 1$
 
 
 ## Implementáció

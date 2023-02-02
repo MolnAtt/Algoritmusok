@@ -14,6 +14,7 @@ namespace ConsoleApp1
             }
             return sum;
         }
+        
         static double Osszeg2(List<double> lista)
         {
             double sum = 0;

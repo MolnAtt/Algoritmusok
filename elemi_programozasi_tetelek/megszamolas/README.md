@@ -23,7 +23,7 @@ static int Megszamolas(List<double> lista)
     int db = 0;
     foreach (double elem in lista)
     {
-        db += 1;
+        db++;
     }
     return db;
 }

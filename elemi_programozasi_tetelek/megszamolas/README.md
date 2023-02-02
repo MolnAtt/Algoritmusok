@@ -12,7 +12,8 @@ Azon programozási nyelvekben nem alkalmazható csak ez a tétel, amelyekben nin
 lista hossza alatt következőképpen definiált függvényt értjük:
 
 $\mathrm{Hossz}([]) = 0$
-$\mathrm{Hossz}([x]+L) = \mathrm{Hossz}(L) + 1$
+
+$\mathrm{Hossz}([x]+L) \overset{=}{def} \mathrm{Hossz}(L) + 1$
 
 
 ## Implementáció

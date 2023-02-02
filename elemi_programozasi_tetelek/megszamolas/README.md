@@ -11,14 +11,8 @@ Azon programozási nyelvekben nem alkalmazható csak ez a tétel, amelyekben nin
 ### Formális specifikáció
 lista hossza alatt következőképpen definiált függvényt értjük:
 
-$$
-\begin{aligned}
-    \mathrm{Hossz}([]) &= 0
-\\  \mathrm{Hossz}([x]+L) &= \mathrm{Hossz}(L) + 1
-\end{aligned}
-$$
-
-$$\begin{aligned} 2x - 4 &= 6 \\ 2x &= 10 \\ x &= 5 \end{aligned}$$
+$\mathrm{Hossz}([]) = 0$
+$\mathrm{Hossz}([x]+L) = \mathrm{Hossz}(L) + 1$
 
 
 ## Implementáció

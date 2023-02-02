@@ -48,6 +48,8 @@ static double Osszeg2(List<double> lista)
 
 ## Megjegyzések
 matematikai értelemben ez a programozási tétel lefed más programozási tételeket is, pl.:
-- a maximumkeresés is felfogható összegzésként: A művelet a két elemre vonatkozó maximum művelet, a nullelem pedig a lista első eleme. 
-- a kiválogatás is felfogható feltételes összegzésként: A nullelem az üres lista, a művelet pedig az unió.
+- a megszámolás is felfogható összegzésként. A nullelem itt is a nulla, a művelet pedig ``f(x,y) = x+1``.
+- a maximumkeresés is felfogható összegzésként: A művelet a két elemre vonatkozó maximum művelet: ``f(x,y) = (y ha x<y egyébként x)``, a nullelem pedig a lista első eleme. 
+- a kiválogatás is felfogható feltételes összegzésként: A nullelem az üres lista, a művelet pedig a listák egymásutánfűzése (konkatenációja).
+
 Azért tanulunk mégis új tételeket ezekre, mert az implementáció során az összegzésszerű megvalósítás nem elég hatékony memória vagy sebesség szempontjából.

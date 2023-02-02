@@ -1,5 +1,5 @@
-function Maximum(lista){
-    max = lista[0];
+function maximum(lista){
+    let max = lista[0];
     for (let i = 1; i < lista.length; i++) {
         if (max < lista[i]) {
             max = lista[i];
@@ -8,9 +8,9 @@ function Maximum(lista){
     return max;
 }
 
-function Maximum_indexe(lista){    
-    max = lista[0];
-    maxi = 0;
+function maximumIndexe(lista){    
+    let max = lista[0];
+    let maxi = 0;
     for (let i = 1; i < lista.length; i++) {
         if (max < lista[i]) {
             max = lista[i];
@@ -20,6 +20,6 @@ function Maximum_indexe(lista){
     return maxi;
 }
 
-l = [4, 5, 1, 3, 2];
-console.log(Maximum(l));
-console.log(Maximum_indexe(l));
+let l = [4, 5, 1, 3, 2];
+console.log(maximum(l));
+console.log(maximumIndexe(l));

@@ -17,8 +17,6 @@ Ez a programozási tétel alkalmazható minden olyan helyzetben, amikor egy lét
 Hasonló változatok még:
 - számlista elemeinek a szorzata
 - szöveglista elemeinek az egymás után írása (konkatenációja)
-- a maximumkeresés is  
-- a kiválogatás is felfogható feltételes összegzésként: A nullelem az üres lista, a művelet pedig az unió.
 
 
 Implementáció iterációval:
@@ -50,6 +48,13 @@ static double Osszeg2(List<double> lista)
 Összeépítések más programozási tételekkel:
 - Feltételes összegzés: Adjuk össze a lista megadott feltételnek megfelelő elemeit
 - Csoportosításos összegzés: A megadott feltételek alapján csoportosítsuk a lista elemeit és számoljuk ki mindegyik csoport összegét!
+
+
+Megjegyzések:
+matematikai értelemben ez a programozási tétel lefed más programozási tételeket is, pl.:
+- a maximumkeresés is felfogható összegzésként: A művelet a két elemre vonatkozó maximum művelet, a nullelem pedig a lista első eleme. 
+- a kiválogatás is felfogható feltételes összegzésként: A nullelem az üres lista, a művelet pedig az unió.
+Azért tanulunk mégis új tételeket ezekre, mert az implementáció során az összegzésszerű megvalósítás nem elég hatékony memória vagy sebesség szempontjából.
 
 
 

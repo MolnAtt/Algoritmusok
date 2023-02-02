@@ -13,8 +13,8 @@ lista hossza alatt következőképpen definiált függvényt értjük:
 
 $$
 \begin{array}{rcl}
-    \mathrm{Hossz}([]) &=& 0
-    \mathrm{Hossz}([x]+L) &=& Hossz(L) + 1
+        \mathrm{Hossz}([]) &=& 0
+    \\  \mathrm{Hossz}([x]+L) &=& Hossz(L) + 1
 \end{array}
 $$
 

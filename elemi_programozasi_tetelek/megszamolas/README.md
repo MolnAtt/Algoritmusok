@@ -12,10 +12,10 @@ Azon programozási nyelvekben nem alkalmazható csak ez a tétel, amelyekben nin
 lista hossza alatt következőképpen definiált függvényt értjük:
 
 $$
-\begin{align}
+\begin{aligned}
     \mathrm{Hossz}([]) &= 0
-\\  \mathrm{Hossz}([x]+L) &= Hossz(L) + 1
-\end{align}
+\\  \mathrm{Hossz}([x]+L) &= \mathrm{Hossz}(L) + 1
+\end{aligned}
 $$
 
 

@@ -55,8 +55,3 @@ matematikai értelemben ez a programozási tétel lefed más programozási téte
 - a maximumkeresés is felfogható összegzésként: A művelet a két elemre vonatkozó maximum művelet, a nullelem pedig a lista első eleme. 
 - a kiválogatás is felfogható feltételes összegzésként: A nullelem az üres lista, a művelet pedig az unió.
 Azért tanulunk mégis új tételeket ezekre, mert az implementáció során az összegzésszerű megvalósítás nem elég hatékony memória vagy sebesség szempontjából.
-
-
-
-
-##### Változatok:

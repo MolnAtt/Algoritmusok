@@ -14,6 +14,6 @@ function Osszeg2(lista){
     return sum;
 }
 
-l = [1, 2, 3, 4, 5]
-console.log(Osszeg1(l))
-console.log(Osszeg2(l))
+l = [1, 2, 3, 4, 5];
+console.log(Osszeg1(l));
+console.log(Osszeg2(l));

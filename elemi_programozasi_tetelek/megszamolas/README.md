@@ -11,7 +11,7 @@ A magas szintű programozási nyelvekben a lista elemszámát általában a list
 
 A C# nyelven tehát könnyedén megválaszolható a típusfeladat kérdése:
 ```cs
-Console.WriteLine(lista.Count);
+lista.Count;
 ```
 
 A következő implementációban tehát csak "úgy teszünk", mintha a lista elemszámához nem férnénk egyébként hozzá. A programozási tételek összeépítésekor, tehát utólag lesz értelme annak, hogy ezt az egyébként felesleges munkát most mégis elvégezzük. 

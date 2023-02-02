@@ -1,51 +1,61 @@
-
-# Összegzés
+# Maximumkeresés
 
 ## Típusfeladat
-Keressük egy lista összes elemének összegét!
+Keressük egy lista legnagyobb elemét! 
 
 ## Általánosságban
-Ez a programozási tétel alkalmazható minden olyan helyzetben, amikor egy létező kétváltozós műveletet ki akarunk terjeszteni egy lista összes elemére. Azaz a + művelet esetén össze akarjuk adni a lista összes elemét.
+Ez a programozási tétel alkalmazható minden olyan helyzetben, amikor létezik egy elemtípusban adott valamféle rendezés, pl. az egész számok esetében a <. A válasz az az elem lesz, amely <-értelemben nagyobb minden más elemnél. 
 
 Hasonló változatok még:
-- számlista elemeinek a szorzata
-- szöveglista elemeinek az egymás után írása (konkatenációja)
+- Minimumkeresés
+
+
 
 ## Implementáció
 
-### Iterációval:
+### Maximális érték keresése
 ```cs
-static double Osszeg1(List<double> lista)
+static double Maximum(List<double> lista)
 {
-    double sum = 0;
-    foreach (double elem in lista)
+    double max = lista[0];
+    for (int i = 1; i < lista.Count; i++)
     {
-        sum += elem;
+        if (max < lista[i])
+        {
+            max = lista[i];
+        }
     }
-    return sum;
+    return max;
 }
 ```
 
-### Számlálóciklussal
+### Maximális érték indexének keresése
 ```cs
-static double Osszeg2(List<double> lista)
+static int Maximum_indexe(List<double> lista)
 {
-    double sum = 0;
-    for (int i = 0; i < lista.Count; i++)
+    double max = lista[0];
+    int maxi = 0;
+    for (int i = 1; i < lista.Count; i++)
     {
-        sum += lista[i];
+        if (max < lista[i])
+        {
+            max = lista[i];
+            maxi = i;
+        }
     }
-    return sum;
+    return maxi;
 }
 ```
+### Észrevételek:
+- Az algoritmus nem működik, ha üres listával dolgozunk. De üres lista esetén a kérdésnek sincs értelme.
+- Figyeljünk oda arra, hogy a ciklus 1-től indul! Az eredmény ugyanaz, ha 0-tól indul, de egy teljesen felesleges számítást takar az egész
+
 
 ## Összeépítések más programozási tételekkel
-- Feltételes összegzés: Adjuk össze a lista megadott feltételnek megfelelő elemeit
-- Csoportosításos összegzés: A megadott feltételek alapján csoportosítsuk a lista elemeit és számoljuk ki mindegyik csoport összegét!
+- Feltételes maximumkeresés: Keressük egy lista adott feltételnek megfelelő elemei közül a legnagyobbat. Pl. Keressük a legnagyobb páros számot. 
+- Sorozatszámítás utáni maximumkeresés: Keressük egy lista adott függvény szerinti képének legnagyobb elemét. Pl. Keressük azt a számot, amelynek a legnagyobb a négyzete (itt a negatív számok beelőzhetnek!).
+- Csoportosításos maximumkeresés: A megadott feltételek alapján csoportosítsuk a lista elemeit és számoljuk ki mindegyik csoport maximumát!
 
 
 ## Megjegyzések
-matematikai értelemben ez a programozási tétel lefed más programozási tételeket is, pl.:
-- a maximumkeresés is felfogható összegzésként: A művelet a két elemre vonatkozó maximum művelet, a nullelem pedig a lista első eleme. 
-- a kiválogatás is felfogható feltételes összegzésként: A nullelem az üres lista, a művelet pedig az unió.
-Azért tanulunk mégis új tételeket ezekre, mert az implementáció során az összegzésszerű megvalósítás nem elég hatékony memória vagy sebesség szempontjából.
+- ha az indexre és az értékre is szükségünk van, nem biztos, hogy két változót visszaadó függvénnyel kell bajlódni. Ilyenkor keressük az indexet és az alapján kérjük le az értéket, ez ugyanis konstans idejű művelet. 

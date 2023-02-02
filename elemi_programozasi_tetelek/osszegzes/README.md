@@ -1,4 +1,3 @@
-
 # Összegzés
 
 ## Típusfeladat
@@ -38,6 +37,9 @@ static double Osszeg2(List<double> lista)
     return sum;
 }
 ```
+
+### Észrevételek
+- Üres listára a fenti algoritmusok alkalmazhatók, arra 0 eredményt adnak. 
 
 ## Összeépítések más programozási tételekkel
 - Feltételes összegzés: Adjuk össze a lista megadott feltételnek megfelelő elemeit

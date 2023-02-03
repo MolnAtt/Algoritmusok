@@ -4,9 +4,15 @@ Azt hiszem, ezt csak a magam szórakoztatására csináltam.
 ## Két szám közötti természetes számok halmaza
 $$ i \in [n..m] \overset{\mathrm{def}}{\iff} n\leq i \land i\leq m$$
 
+$$ i \in [n..m) \overset{\mathrm{def}}{\iff} n\leq i \land i< m$$
+
+
+
 Ha nem tesszük fel, hogy $i$ csak természetes szám lehet, azaz a halmazelmélet nyelvét használjuk, akkor 
 
-$$ {[}n..m{]}  \overset{\mathrm{def}}{=} [n,m] \cap \mathbb N$$ ahol ${[}n,m{]}$ a szokásos intervallumjelölés.
+$$ {[}n..m{]}  \overset{\mathrm{def}}{=} [n,m] \cap \mathbf N$$ ahol ${[}n,m{]}$ a szokásos zárt intervallumjelölés.
+
+$$ {[}n..m{]}  \overset{\mathrm{def}}{=} [n,m) \cap \mathbf N$$ ahol ${[}n,m{)}$ a szokásos félig zárt, félig nyílt intervallumjelölés.
 
 # Tömbök elsőrendű elmélete
 

@@ -9,6 +9,7 @@ Ez a programozási tétel nem más, mint egy egyváltozós $f$ függvény kiterj
 ## Specifikáció
 
 $$ \mathrm{Masolas}_f(t_1) = t_2 \overset{\mathrm{def}}{\iff} \mathbf N_{t_1}=\mathbf N_{t_2} \land (\forall i \in [0..\mathbf N_{t_1}))\; f(t_1[i]) = t_2[i] $$
+
 ahol ebben az esetben most $f(x) = x ^2$.
 
 

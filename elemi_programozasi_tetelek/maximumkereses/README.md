@@ -28,7 +28,6 @@ ahol
 $$ 
     \mathrm{maxi} (t, i_m) 
     \overset{\mathrm{def}}{\iff} 
-    
     (\forall i \in [0..\mathbf N_t)) t[i]\leq t[i_m]
 $$
 

@@ -10,6 +10,11 @@ Hasonló változatok még:
 - számlista elemeinek a szorzata
 - szöveglista elemeinek az egymás után írása (konkatenációja)
 
+## Specifikáció
+
+$$ Összeg([]) = 0$
+$$  \sum_{i\in []}$$
+
 ## Implementáció
 
 ### Iterációval:
@@ -37,6 +42,7 @@ static double Osszeg2(List<double> lista)
     return sum;
 }
 ```
+
 
 ### Észrevételek
 - Üres listára a fenti algoritmusok alkalmazhatók, arra 0 eredményt adnak. 

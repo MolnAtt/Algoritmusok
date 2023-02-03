@@ -8,8 +8,9 @@ Ez a programozási tétel nem más, mint egy egyváltozós $f$ függvény kiterj
 
 ## Specifikáció
 
-$$ \mathrm{Masolas}(f, L) = R \overset{\mathrm{def}}{\iff} \mathrm{Hossz}(L)=\mathrm{Hossz}(R) \land (forall i in [0..\mathrm{Hossz}(L)])\, f(L[i]) = R[i] $$
-ahol ebben az esetben most $f = (\lambda x)\, x^2$
+$$ \mathrm{Masolas}(f, L) = R \overset{\mathrm{def}}{\iff} \mathrm{Hossz}(L)=\mathrm{Hossz}(R) \land (\forall i in [0..\mathrm{Hossz}(L)]) f(L[i]) = R[i] $$
+
+ahol ebben az esetben most $f = (\lambda x) x^2$
 
 ## Implementáció
 

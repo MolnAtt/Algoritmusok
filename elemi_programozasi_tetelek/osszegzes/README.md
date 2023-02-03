@@ -18,11 +18,7 @@ $$ \mathrm{Osszeg}(t) \overset{\mathrm{def}}{=} \sum_{i\in [0..\mathbf N_t]} t[i
 
 - vagy primitív eszközökkel rekurzívan definiálva a nyelvben:
 
-$$ 
-\begin{aligned}  
-    \mathrm{Osszeg}([]) &\overset{\mathrm{def}}{=} 0 
-    \\ \mathrm{Osszeg}([e|t]) &\overset{\mathrm{def}}{=} e +\mathrm{Osszeg}(t)
-\end{aligned} $$
+$$ \begin{aligned}  \mathrm{Osszeg}([]) &\overset{\mathrm{def}}{=} 0 \\ \mathrm{Osszeg}([e|t]) &\overset{\mathrm{def}}{=} e +\mathrm{Osszeg}(t)\end{aligned} $$
 
 ## Algoritmus
 ```

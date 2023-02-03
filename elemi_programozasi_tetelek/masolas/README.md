@@ -8,15 +8,17 @@ Ez a programozási tétel nem más, mint egy egyváltozós $f$ függvény kiterj
 
 ## Specifikáció
 
-$$ \mathrm{Masolas}_f(t_1) = t_2 \overset{\mathrm{def}}{\iff} \mathbf N_{t_1}=\mathbf N_{t_2} \land (\forall i \in [0..\mathbf N_{t_1}))\; f(t_1[i]) = t_2[i] $$
+$$ \mathrm{Masolas}_f(t_1) = t_2 \overset{\mathrm{def}}{\iff} \mathbf N_{t_1}=\mathbf N_{t_2} \land (\forall i \in [0..\mathbf N_{t_1})) f(t_1[i]) = t_2[i] $$
 
 ahol ebben az esetben most $f(x) = x ^2$.
 
 
-Lambda-kalkulusal bővítve a nyelvet $f$ lehetne tárgynyelven is, ekkor azt lehetne mondani, hogy ez esetben $f=(\lambda x)\, x^2$
+Lambda-kalkulusal bővítve a nyelvet $f$ lehetne tárgynyelven is, ekkor azt lehetne mondani, hogy ez esetben $f=(\lambda x) x^2$
 
 Megjegyezzük, hogy matematikában szokásos ezt a következő, rövidebb formában is jelölni:
+
 $$ f[t] \overset{\mathrm{def}}= \mathrm{Masolas}_f(t) $$
+
 ez nem okoz kétértelműséget az eddigi lekérdezéses jelöléssel, mert abba csak számterminusokat lehetett írni, tömbváltozókat nem.
 
 Tehát a feladat az $f[t_1]=t_2$ függvény kiszámítására algoritmust írni, ahol $f$ a négyzetre emelés függvénye.

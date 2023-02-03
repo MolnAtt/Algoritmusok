@@ -22,12 +22,14 @@ $$
     \overset{\mathrm{def}}{\iff} 
     (\exists i_m) (t[i_m]=m\land \mathrm{maxi}(t, i_m))
 $$
+
 ahol 
+
 $$ 
     \mathrm{maxi} (t, i_m) 
     \overset{\mathrm{def}}{\iff} 
     
-    (\forall i \in [0..\mathbf N_t))\; t[i]\leq t[i_m]
+    (\forall i \in [0..\mathbf N_t)) t[i]\leq t[i_m]
 $$
 
 A maximális érték helyének keresésekor egy lehetséges $i$ értéket keresünk, amelyre $\mathrm{maxi} (t, i_m) $ igaz.

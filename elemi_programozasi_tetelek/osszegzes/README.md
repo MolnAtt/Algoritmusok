@@ -14,12 +14,18 @@ Hasonló változatok még:
 A programozási tétel értelmezéséhez feltesszük, hogy az összeadás értelmezve van az értékszorton. Feladat a következő függvény kiszámítása
 
 - Szokásos jelöléssel:
+
 $$ \mathrm{Osszeg}(t) \overset{\mathrm{def}}{=} \sum_{i\in [0..\mathbf N_t]} t[i]$$
 
 - vagy primitív eszközökkel rekurzívan definiálva a nyelvben:
 
-$$ \begin{aligned}  \mathrm{Osszeg}([]) &\overset{\mathrm{def}}{=} 0 \\ \mathrm{Osszeg}([e|t]) &\overset{\mathrm{def}}{=} e +\mathrm{Osszeg}(t)\end{aligned} $$
+$$ \mathrm{Osszeg}([]) \overset{\mathrm{def}}{=} 0 
+$$
 
+$$\mathrm{Osszeg}([e|t]) \overset{\mathrm{def}}{=} e +\mathrm{Osszeg}(t)$$
+
+
+(*Itt most el van kenve egy béta-függvény lemma.*)
 ## Algoritmus
 ```
 Függvény Összeg(t: Tömb[Szám]): Szám

@@ -17,7 +17,9 @@ $$ {[}n..m{]}  \overset{\mathrm{def}}{=} [n,m) \cap \mathbf N$$
 ahol ${[}n,m{]}$ a szokásos zárt intervallumjelölés, ${[}n,m{)}$ pedig a szokásos félig zárt, félig nyílt intervallumjelölés.
 
 # Tömbök elsőrendű elmélete
+Megjegyezzük, hogy az itt tárgyalt szort és a interszort predikátumok definálhatók a Peano aritmetika nyelvén. A cél a véges sorozatok megragadása és a Béta-függvény lemma pontosan erről szól.
 
+Célunk tehát nem a rendszer vizsgálata (az ugyanis jól ismert rendszer lényegében a Peano aritmetika rendszere), hanem az eszközök logikai letisztítása. 
 ## Logikai alapok
 
 ### Nyelv:
@@ -28,7 +30,7 @@ Három szortú nyelvet használunk.
 A harmadik szortot "szabadon hagyjuk", nem teszünk fel róla szortspecifikus axiómákat, csak akkor, amikor néhány programozási tétel ezt felteszi, például rendezést a maximumkeresésnél vagy egy kétargumentumú műveletet az összegzésnél.
 
 #### Terminusok
-##### Változók, Függvény és relációjelek: 
+##### Változók, Függvény és relációjelek
 **Változójelek:** A tömbökre a $t, t_1, \dots$, az indexekre az $i, i_1, \dots$ és az értékekre az $e, e_1, \dots$ változójeleket használjuk. 
 
 **Függvényjelek:** Az $\mathbf N$ egyargumentumú szortösszekötő függvényjel egy lista hosszát jelöli majd. Ez tehát tömbterminusokon lesz alkalmazható és az eredménye egy számterminus lesz. Az $\mathbf{N}(t)$ természetes számra mint a *lista hossza* fogunk hivatkozni. Rövidebben általában az $\mathbf N_t$ jelölést fogjuk alkalmazni.
@@ -37,7 +39,9 @@ A harmadik szortot "szabadon hagyjuk", nem teszünk fel róla szortspecifikus ax
 
 **Számterminusok** alatt a következőképpen előálló terminusokat értjük:
 $$ 
-    \tau_i ::=      i 
+    \tau_i ::=      0 
+    \quad |\quad    i 
+    \quad |\quad    s(i) 
     \quad |\quad    i + j 
     \quad |\quad    i\cdot j
     \quad |\quad    \mathbf N_t 
@@ -50,7 +54,6 @@ Feltesszük, hogy a harmadik, szabadon hagyott értékszortnak is megvannak a ma
 $$ 
     \varphi ::=     t_1 = t_2
     \quad |\quad    \tau_{i} = \tau_{j}
-    \quad |\quad    \tau_{i} \leq \tau_{j}
     \quad |\quad    \tau_{e_1} = \tau_{e_2}
     \quad |\quad    \mathbf{[]}(t, \tau_{i}, \tau_{e})
     \quad |\quad    \lnot \varphi
@@ -61,8 +64,8 @@ $$
 $$
 
 ### Axiómák
-Az indexek szortjára teljesül a természetes számok elsőrendű elmélete (vagy csak PA).
 
+0. A természetes számokra feltesszük a Peano-axiómákat.
 1. tömbök indexelése a nullától történik és folyamatosan tart a tömb hosszáig 
 $$ i \in {[}0..\mathbf N_t) \leftrightarrow (\exists e) \mathbf{[]}(t, i, e)$$
 2. Az elemlekérdezés reláció egy parciális függvény.

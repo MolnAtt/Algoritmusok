@@ -8,13 +8,40 @@ Ez a programozási tétel nem más, mint egy egyváltozós $f$ függvény kiterj
 
 ## Specifikáció
 
-$$ \mathrm{Masolas}(f, L) = R \overset{\mathrm{def}}{\iff} \mathrm{Hossz}(L)=\mathrm{Hossz}(R) \land (\forall i \in [0..\mathrm{Hossz}(L)]) f(L[i]) = R[i] $$
+$$ \mathrm{Masolas}_f(t_1) = t_2 \overset{\mathrm{def}}{\iff} \mathbf N_{t_1}=\mathbf N_{t_2} \land (\forall i \in [0..\mathbf N_{t_1}))\; f(t_1[i]) = t_2[i] $$
+ahol ebben az esetben most $f(x) = x ^2$.
 
-ahol ebben az esetben most $f = (\lambda x) x^2$
+
+Lambda-kalkulusal bővítve a nyelvet $f$ lehetne tárgynyelven is, ekkor azt lehetne mondani, hogy ez esetben $f=(\lambda x)\, x^2$
+
+Megjegyezzük, hogy matematikában szokásos ezt a következő, rövidebb formában is jelölni:
+$$ f[t] \overset{\mathrm{def}}= \mathrm{Masolas}_f(t) $$
+ez nem okoz kétértelműséget az eddigi lekérdezéses jelöléssel, mert abba csak számterminusokat lehetett írni, tömbváltozókat nem.
+
+Tehát a feladat az $f[t_1]=t_2$ függvény kiszámítására algoritmust írni, ahol $f$ a négyzetre emelés függvénye.
+
+## Algoritmus
+```
+Függvény Masolas(t: tomb): tomb
+    Masolas = üres tömb t-vel azonos méretben
+    Ciklus i:=0-től t hosszáig:
+        Masolas[i] = t[i] * t[i];
+    Ciklus vége
+Függvény vége.
+```
+### Észrevételek:
+- Az algoritmus működik üres listával is; ilyenkor üres lista a válasz.
+
+
+## Összeépítések más programozási tételekkel
+- Összegzés $\circ$ Másolás: Add meg a számok négyzeteinek összegét!
+- Másolás $\circ$ Kiválogatás: Add meg a pozitív számok négyzeteit!
+- Megszámolás $\circ$ Kiválogatás $\circ$ Másolás: Hány olyan szám van, amelyek négyzete nagyobb, mint 100?
+- Maximumkeresés $\circ$ Másolás: Mely számnak a legnagyobb a négyzete?
 
 ## Implementáció
-
-### Dinamikus tömbön
+### C#
+#### Dinamikus tömbön
 ```cs
 static List<double> Masolas(List<double> lista)
 {
@@ -26,7 +53,7 @@ static List<double> Masolas(List<double> lista)
     return result;
 }
 ```
-### Statikus tömbön
+#### Statikus tömbön
 ```cs
 static double[] Masolas(double[] tomb)
 {
@@ -38,12 +65,11 @@ static double[] Masolas(double[] tomb)
     return result;
 }
 ```
-### Észrevételek:
-- Az algoritmus működik üres listával is; ilyenkor üres lista a válasz.
+### További implementációk
+- [C#](masolas.cs)
+- [C++](masolas.cpp)
+- [JavaScript](masolas.js)
+- [Python](masolas.py)
 
 
-## Összeépítések más programozási tételekkel
-- Összegzés $\circ$ Másolás: Add meg a számok négyzeteinek összegét!
-- Másolás $\circ$ Kiválogatás: Add meg a pozitív számok négyzeteit!
-- Megszámolás $\circ$ Kiválogatás $\circ$ Másolás: Hány olyan szám van, amelyek négyzete nagyobb, mint 100?
-- Maximumkeresés $\circ$ Másolás: Mely számnak a legnagyobb a négyzete?
+

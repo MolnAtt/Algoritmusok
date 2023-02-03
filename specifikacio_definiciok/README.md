@@ -10,9 +10,11 @@ $$ i \in [n..m) \overset{\mathrm{def}}{\iff} n\leq i \land i< m$$
 
 Ha nem tesszük fel, hogy $i$ csak természetes szám lehet, azaz a halmazelmélet nyelvét használjuk, akkor 
 
-$$ {[}n..m{]}  \overset{\mathrm{def}}{=} [n,m] \cap \mathbf N$$ ahol ${[}n,m{]}$ a szokásos zárt intervallumjelölés.
+$$ {[}n..m{]}  \overset{\mathrm{def}}{=} [n,m] \cap \mathbf N$$ 
 
-$$ {[}n..m{]}  \overset{\mathrm{def}}{=} [n,m) \cap \mathbf N$$ ahol ${[}n,m{)}$ a szokásos félig zárt, félig nyílt intervallumjelölés.
+$$ {[}n..m{]}  \overset{\mathrm{def}}{=} [n,m) \cap \mathbf N$$ 
+
+ahol ${[}n,m{]}$ a szokásos zárt intervallumjelölés, ${[}n,m{)}$ pedig a szokásos félig zárt, félig nyílt intervallumjelölés.
 
 # Tömbök elsőrendű elmélete
 
@@ -24,7 +26,6 @@ Három szortú nyelvet használunk.
 2. A természetes számok szortja, amely a természetes számok szokásos elsőrendű nyelvét (A Peano-Aritmetika nyelvét) követi.
 3. Az értékek szortja. 
 A harmadik szortot "szabadon hagyjuk", nem teszünk fel róla szortspecifikus axiómákat, csak akkor, amikor néhány programozási tétel ezt felteszi, például rendezést a maximumkeresésnél vagy egy kétargumentumú műveletet az összegzésnél.
-
 
 #### Terminusok
 ##### Változók, Függvény és relációjelek: 
@@ -49,6 +50,7 @@ Feltesszük, hogy a harmadik, szabadon hagyott értékszortnak is megvannak a ma
 $$ 
     \varphi ::=     t_1 = t_2
     \quad |\quad    \tau_{i} = \tau_{j}
+    \quad |\quad    \tau_{i} \leq \tau_{j}
     \quad |\quad    \tau_{e_1} = \tau_{e_2}
     \quad |\quad    \mathbf{[]}(t, \tau_{i}, \tau_{e})
     \quad |\quad    \lnot \varphi
@@ -62,11 +64,11 @@ $$
 Az indexek szortjára teljesül a természetes számok elsőrendű elmélete (vagy csak PA).
 
 1. tömbök indexelése a nullától történik és folyamatosan tart a tömb hosszáig 
-$$ i \in {[}0..\mathbf N_t-1{]} \leftrightarrow (\exists e) \mathbf{[]}(t, i, e)$$
+$$ i \in {[}0..\mathbf N_t) \leftrightarrow (\exists e) \mathbf{[]}(t, i, e)$$
 2. Az elemlekérdezés reláció egy parciális függvény.
 $$ t_1=t_2 \land i_1 = i_2 \land \mathbf{[]}(t_1, i_1, e_1) \land \mathbf{[]}(t_2, i_2, e_2)\rightarrow e_1 = e_2$$
 3. Extenzionalitás: Ha két ugyanakkora tömbnek ugyanazon pozíciókon ugyanazon elemei szerepelnek, akkor a két lista ugyanaz.
-$$ (\mathbf N_{t_1} = \mathbf N _{t_2} \rightarrow (\forall i \in {[}0, \mathbf{N}_{t_1}-1{]}) ((\mathbf{[]}(t_1, i, e)) \leftrightarrow \mathbf{[]}(t_2, i, e)) \rightarrow L_1=L_2)$$
+$$ (\mathbf N_{t_1} = \mathbf N _{t_2} \rightarrow (\forall i \in {[}0, \mathbf{N}_{t_1})) ((\mathbf{[]}(t_1, i, e)) \leftrightarrow \mathbf{[]}(t_2, i, e)) \rightarrow L_1=L_2)$$
 (Az utóbbi axióma jobban olvasható lesz a későbbi jelölések használatával)
 
 ### Eleme-jelölés: $e\in L$
@@ -82,9 +84,9 @@ Az elemlekérdezés kétargumentumú, második argumentumában parciális függv
 
 E jelölésben könnyebben olvasható alakban is felírhatók az axiómák:
 
-1. $ i \in {[}0..\mathbf N_{t}-1{]} \leftrightarrow (\exists e) t[i] = e$
+1. $ i \in {[}0..\mathbf N_{t}) \leftrightarrow (\exists e) t[i] = e$
 2. $ t_1=t_2 \land i_1 = i_2 \land t_1[i_1]= e_1 \land t_2[i_2] = e_2 \rightarrow e_1 = e_2$ (ebben a jelölésben ez ugye triviális)
-3. $\mathbf{N}_{t_1} = \mathbf{N}_{t_2} \rightarrow (t_1=t_2 \leftrightarrow (\forall i \in {[}0, \mathbf{N}_{t_1}-1{]}) (t_1[i] = t_2[i] )$
+3. $\mathbf{N}_{t_1} = \mathbf{N}_{t_2} \rightarrow (t_1=t_2 \leftrightarrow (\forall i \in {[}0..\mathbf{N}_{t_1})) (t_1[i] = t_2[i] )$
 
 ### Korolláriumok
 $$ t_1 = t_2 \implies t_1[i] = t_2[i] $$
@@ -93,19 +95,19 @@ $$ i = j \implies t[i] = t[j] $$
 
 ## Tömbelméleti definíciók
 ### Elem hozzáadása listához
-$$[e|t]=r \overset{\mathrm{def}}{\iff} \mathbf{N}_r = \mathbf{N}_t+1 \land t[\mathbf{N}_t] = e \land (\forall\, i\in [0..\mathbf{N}_t-1]) \, t[i] = r[i]$$
+$$[e|t]=r \overset{\mathrm{def}}{\iff} \mathbf{N}_r = \mathbf{N}_t+1 \land t[\mathbf{N}_t] = e \land (\forall\, i\in [0..\mathbf{N}_t)) \, t[i] = r[i]$$
 
 ### Tömbök konkatenációja
 $$ 
     t_1 + t_2 = t \overset{\mathrm{def}}{\iff} 
     \mathbf{N}_t = \mathbf{N}_{t_1}+\mathbf{N}_{t_2} 
-    \land (\forall\, i\in [0..\mathbf{N}_{t_1}-1]) (t[i] = t_1[i])
-    \land (\forall\, j\in [0..\mathbf{N}_{t_2}-1]) (t[j+\mathbf{N}_{t_1}] = t_2[j])
+    \land (\forall\, i\in [0..\mathbf{N}_{t_1})) (t[i] = t_1[i])
+    \land (\forall\, j\in [0..\mathbf{N}_{t_2})) (t[j+\mathbf{N}_{t_1}] = t_2[j])
 $$
 
 ### Listák megadása elemfelsorolással
 #### üres lista
-${[}{]} = t \overset{\mathrm{def}}{\iff}  \lnot (exists i)(exists e) \, t[i]=e$
+${[}{]} = t \overset{\mathrm{def}}{\iff}  \lnot (\exists i)(\exists e) \, t[i]=e$
 
 A fenti axiómákból következik, hogy ${[}{]}$ egyértelmű; hiszen ha lenne kettő üres lista is, akkor ezeknek legalább egy pozición különbözniük kellene. De ennek ellentmond az extenzionalitási axióma. 
 
@@ -114,5 +116,24 @@ $$[e] = t \overset{\mathrm{def}}{\iff} \mathbf{N}_t = 1 \land t[0] = e$$
 
 #### véges sok elemű lista
 Legyen $X$ egy metanyelvi változó, amely véges sok értékszortra utaló konstansszimbólumot tartalmaz vesszővel elválasztva.
-$[e, X] = t \overset{\mathrm{def}}{\iff} t = [e|[X]]$
+$$[e, X] = t \overset{\mathrm{def}}{\iff} t = [e|[X]]$$
+
+
+## Szemantika
+### Elsőrendű modellek
+under construction... de a szokásos módon, csak három univerzum van a három szortnak, ebből a számtest egy részstruktúra.
+### Standard modellek
+$$\mathfrak S_E = \left(T, \omega, E, \mathbf N^{\mathfrak S_E}, \mathbf {[]}^{\mathfrak S_E}\right)$$
+
+ahol az univerzumok:
+- $T$ a véges természetes számsorozatokból E-be képező függvények halmaza: 
+$$T = {}^{\{[0,n)\cap \mathbb N : n\in \mathbb N \}}E$$ 
+- $\mathbb N = (\omega, +^{\mathbb N}, \cdot^{\mathbb N})$ a természetes számok halmaza a szokásos módon értelmezett műveletekkel
+- E a struktúraparaméter, az értékszort interpretálásához.
+- $\mathbf N^{\mathfrak S_E}: T \to \omega$ a hosszfüggvény a következő definícióval:
+$$\mathbf N^{\mathfrak S_E}(t) \overset{\mathrm{def}}{=} |\mathrm{dom}(f)|$$
+- $\mathbf {[]}^{\mathfrak S_E}\subseteq  T\times \omega \times E$ a lekérdezésreláció jelentése, amelynek definíciója a következőképp adódik:
+$$(t,i,e) \in \mathbf{[]}^{\mathfrak S_E}
+\overset{\mathrm{def}}{\iff } t(i)=e $$
+
 

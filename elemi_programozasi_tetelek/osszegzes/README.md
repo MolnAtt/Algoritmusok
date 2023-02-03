@@ -11,15 +11,51 @@ Hasonló változatok még:
 - szöveglista elemeinek az egymás után írása (konkatenációja)
 
 ## Specifikáció
+A programozási tétel értelmezéséhez feltesszük, hogy az összeadás értelmezve van az értékszorton. Feladat a következő függvény kiszámítása
 
-$$ Összeg([]) = 0$
-$$  \sum_{i\in []}$$
+- Szokásos jelöléssel:
+$$ \mathrm{Osszeg}(t) \overset{\mathrm{def}}{=} \sum_{i\in [0..\mathbf N_t]} t[i]$$
 
-## Implementáció
+- vagy primitív eszközökkel rekurzívan definiálva a nyelvben:
 
-### Iterációval:
+$$ 
+\begin{aligned}  
+    \mathrm{Osszeg}([]) &\overset{\mathrm{def}}{=} 0 
+    \\ \mathrm{Osszeg}([e|t]) &\overset{\mathrm{def}}{=} e +\mathrm{Osszeg}(t)
+\end{aligned} $$
+
+## Algoritmus
+```
+Függvény Összeg(t: Tömb[Szám]): Szám
+    Összeg := 0
+    Iteráció a t tömb e elemein:
+        Összeg += e
+    Iteráció vége
+Függvény vége.
+```
+### Észrevételek
+- Üres listára a fenti algoritmusok alkalmazhatók, arra 0 eredményt adnak. 
+
+### Összeépítések más programozási tételekkel
+- Feltételes összegzés: Adjuk össze a lista megadott feltételnek megfelelő elemeit
+- Csoportosításos összegzés: A megadott feltételek alapján csoportosítsuk a lista elemeit és számoljuk ki mindegyik csoport összegét!
+
+
+### Megjegyzések
+Matematikai értelemben ez a programozási tétel lefed más programozási tételeket is, pl.:
+- a megszámolás is felfogható összegzésként. A nullelem itt is a nulla, a művelet pedig ``f(x,y) = x+1``.
+- a maximumkeresés is felfogható összegzésként: A művelet a két elemre vonatkozó maximum művelet: ``f(x,y) = (y ha x<y egyébként x)``, a nullelem pedig a lista első eleme. 
+- a kiválogatás is felfogható feltételes összegzésként: A nullelem az üres lista, a művelet pedig a listák egymás után fűzése (konkatenációja).
+
+Azért tanulunk mégis új tételeket ezekre, mert az implementáció során az összegzésszerű megvalósítás nem elég hatékony memória vagy sebesség szempontjából.
+
+
+## Implementációk
+### C# Implementáció
+
+#### Iterációval:
 ```cs
-static double Osszeg1(List<double> lista)
+static double Osszeg(List<double> lista)
 {
     double sum = 0;
     foreach (double elem in lista)
@@ -30,9 +66,9 @@ static double Osszeg1(List<double> lista)
 }
 ```
 
-### Számlálóciklussal
+#### Számlálóciklussal
 ```cs
-static double Osszeg2(List<double> lista)
+static double Osszeg(List<double> lista)
 {
     double sum = 0;
     for (int i = 0; i < lista.Count; i++)
@@ -42,20 +78,11 @@ static double Osszeg2(List<double> lista)
     return sum;
 }
 ```
+### További implementációk
+- [C#](osszegzes.cs)
+- [C++](osszegzes.cpp)
+- [JavaScript](osszegzes.js)
+- [Python](osszegzes.py)
 
 
-### Észrevételek
-- Üres listára a fenti algoritmusok alkalmazhatók, arra 0 eredményt adnak. 
 
-## Összeépítések más programozási tételekkel
-- Feltételes összegzés: Adjuk össze a lista megadott feltételnek megfelelő elemeit
-- Csoportosításos összegzés: A megadott feltételek alapján csoportosítsuk a lista elemeit és számoljuk ki mindegyik csoport összegét!
-
-
-## Megjegyzések
-matematikai értelemben ez a programozási tétel lefed más programozási tételeket is, pl.:
-- a megszámolás is felfogható összegzésként. A nullelem itt is a nulla, a művelet pedig ``f(x,y) = x+1``.
-- a maximumkeresés is felfogható összegzésként: A művelet a két elemre vonatkozó maximum művelet: ``f(x,y) = (y ha x<y egyébként x)``, a nullelem pedig a lista első eleme. 
-- a kiválogatás is felfogható feltételes összegzésként: A nullelem az üres lista, a művelet pedig a listák egymásutánfűzése (konkatenációja).
-
-Azért tanulunk mégis új tételeket ezekre, mert az implementáció során az összegzésszerű megvalósítás nem elég hatékony memória vagy sebesség szempontjából.

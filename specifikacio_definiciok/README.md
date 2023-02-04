@@ -2,6 +2,7 @@
 Azt hiszem, ezt csak a magam szórakoztatására csináltam. 
 
 ## Két szám közötti természetes számok halmaza
+
 $$ i \in [n..m] \overset{\mathrm{def}}{\iff} n\leq i \land i\leq m$$
 
 $$ i \in [n..m) \overset{\mathrm{def}}{\iff} n\leq i \land i< m$$
@@ -38,6 +39,7 @@ A harmadik szortot "szabadon hagyjuk", nem teszünk fel róla szortspecifikus ax
 **Relációjelek:** Az elemlekérdezés háromváltozós, szortösszekötő relációja: $\mathbf{[]}(t, i, e)$. Ha e három változó között a reláció fennáll, azt mondjuk majd, hogy a *$t$ tömb $i$-edik helyén $e$ áll*. 
 
 **Számterminusok** alatt a következőképpen előálló terminusokat értjük:
+
 $$ 
     \tau_i ::=      0 
     \quad |\quad    i 
@@ -70,10 +72,15 @@ Megjegyezzük, hogy a tömbök értékei az indexelésre szolgáló indexek is l
 
 0. A természetes számokra feltesszük a Peano-axiómákat.
 1. tömbök indexelése a nullától történik és folyamatosan tart a tömb hosszáig 
+
 $$ i \in {[}0..\mathbf N_t) \leftrightarrow (\exists e) \mathbf{[]}(t, i, e)$$
+
 2. Az elemlekérdezés reláció egy parciális függvény.
+
 $$ t_1=t_2 \land i_1 = i_2 \land \mathbf{[]}(t_1, i_1, e_1) \land \mathbf{[]}(t_2, i_2, e_2)\rightarrow e_1 = e_2$$
+
 3. Extenzionalitás: Ha két ugyanakkora tömbnek ugyanazon pozíciókon ugyanazon elemei szerepelnek, akkor a két lista ugyanaz.
+
 $$ (\mathbf N_{t_1} = \mathbf N _{t_2} \rightarrow (\forall i \in {[}0, \mathbf{N}_{t_1})) ((\mathbf{[]}(t_1, i, e)) \leftrightarrow \mathbf{[]}(t_2, i, e)) \rightarrow L_1=L_2)$$
 (Az utóbbi axióma jobban olvasható lesz a későbbi jelölések használatával)
 
@@ -84,6 +91,7 @@ $$e \in L[i] \overset{\mathrm{def}}{\iff} (\exists i) \mathbf{[]}(L, i, e)$$
 
 ### Elemlekérdezés jelölése: $L[i]$
 **Definíció.** *(lekérdezés)* A második axióma alapján jogosan használhatjuk a következő jelölést:
+
 $$t[i]=e \overset{\mathrm{def}}{\iff} \mathbf{[]}(t, i, e)$$
 
 Az elemlekérdezés kétargumentumú, második argumentumában parciális függvénye, amely egy $t$ tömbhöz és *bizonyos* $i$ természetes számokhoz hozzárendel egy elemet. Erre a hozzárendelt elemre mint az *L lista i-edik eleme* hivatkozunk és $t[i]$-ként jelöljük.
@@ -95,15 +103,19 @@ E jelölésben könnyebben olvasható alakban is felírhatók az axiómák:
 3. $\mathbf{N}_{t_1} = \mathbf{N}_{t_2} \rightarrow (t_1=t_2 \leftrightarrow (\forall i \in {[}0..\mathbf{N}_{t_1})) (t_1[i] = t_2[i] )$
 
 ### Korolláriumok
+
 $$ t_1 = t_2 \implies t_1[i] = t_2[i] $$
+
 $$ i = j \implies t[i] = t[j] $$
 
 
 ## Tömbelméleti definíciók
 ### Elem hozzáadása listához
+
 $$[e|t]=r \overset{\mathrm{def}}{\iff} \mathbf{N}_r = \mathbf{N}_t+1 \land t[\mathbf{N}_t] = e \land (\forall\, i\in [0..\mathbf{N}_t)) \, t[i] = r[i]$$
 
 ### Tömbök konkatenációja
+
 $$ 
     t_1 + t_2 = t \overset{\mathrm{def}}{\iff} 
     \mathbf{N}_t = \mathbf{N}_{t_1}+\mathbf{N}_{t_2} 
@@ -118,10 +130,12 @@ ${[}{]} = t \overset{\mathrm{def}}{\iff}  \lnot (\exists i)(\exists e) \, t[i]=e
 A fenti axiómákból következik, hogy ${[}{]}$ egyértelmű; hiszen ha lenne kettő üres lista is, akkor ezeknek legalább egy pozición különbözniük kellene. De ennek ellentmond az extenzionalitási axióma. 
 
 #### egyelemű lista
+
 $$[e] = t \overset{\mathrm{def}}{\iff} \mathbf{N}_t = 1 \land t[0] = e$$
 
 #### véges sok elemű lista
 Legyen $X$ egy metanyelvi változó, amely véges sok értékszortra utaló konstansszimbólumot tartalmaz vesszővel elválasztva.
+
 $$[e, X] = t \overset{\mathrm{def}}{\iff} t = [e|[X]]$$
 
 
@@ -129,15 +143,20 @@ $$[e, X] = t \overset{\mathrm{def}}{\iff} t = [e|[X]]$$
 ### Elsőrendű modellek
 under construction... de a szokásos módon, csak három univerzum van a három szortnak, ebből a számtest egy részstruktúra.
 ### Standard modellek
+
 $$\mathfrak S_E = \left(T, \omega, E, \mathbf N^{\mathfrak S_E}, \mathbf {[]}^{\mathfrak S_E}\right)$$
 
 ahol az univerzumok:
 - $T$ a véges természetes számsorozatokból E-be képező függvények halmaza: 
+
 $$T = {}^{\{[0,n)\cap \mathbb N : n\in \mathbb N \}}E$$ 
+
 - $\mathbb N = (\omega, +^{\mathbb N}, \cdot^{\mathbb N})$ a természetes számok halmaza a szokásos módon értelmezett műveletekkel
 - E a struktúraparaméter, az értékszort interpretálásához.
 - $\mathbf N^{\mathfrak S_E}: T \to \omega$ a hosszfüggvény a következő definícióval:
+
 $$\mathbf N^{\mathfrak S_E}(t) \overset{\mathrm{def}}{=} |\mathrm{dom}(f)|$$
+
 - $\mathbf {[]}^{\mathfrak S_E}\subseteq  T\times \omega \times E$ a lekérdezésreláció jelentése, amelynek definíciója a következőképp adódik:
 $$(t,i,e) \in \mathbf{[]}^{\mathfrak S_E}
 \overset{\mathrm{def}}{\iff } t(i)=e $$

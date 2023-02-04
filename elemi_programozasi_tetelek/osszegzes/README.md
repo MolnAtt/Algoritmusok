@@ -11,7 +11,11 @@ Hasonló változatok még:
 - szöveglista elemeinek az egymás után írása (konkatenációja)
 
 ## Specifikáció
-A programozási tétel értelmezéséhez feltesszük, hogy az összeadás értelmezve van az értékszorton. Feladat a következő függvény kiszámítása
+A feladat előfeltétellel bír:
+
+- Feltesszük, hogy az összeadás értelmezve van az értékszorton. 
+
+A feladat a következő függvény kiszámítása
 
 - Szokásos jelöléssel:
 
@@ -39,18 +43,8 @@ Függvény vége.
 - Üres listára a fenti algoritmusok alkalmazhatók, arra 0 eredményt adnak. 
 
 ### Összeépítések más programozási tételekkel
-- Feltételes összegzés: Adjuk össze a lista megadott feltételnek megfelelő elemeit
-- Csoportosításos összegzés: A megadott feltételek alapján csoportosítsuk a lista elemeit és számoljuk ki mindegyik csoport összegét!
-
-
-### Megjegyzések
-Matematikai értelemben ez a programozási tétel lefed más programozási tételeket is, pl.:
-- a megszámolás is felfogható összegzésként. A nullelem itt is a nulla, a művelet pedig ``f(x,y) = x+1``.
-- a maximumkeresés is felfogható összegzésként: A művelet a két elemre vonatkozó maximum művelet: ``f(x,y) = (y ha x<y egyébként x)``, a nullelem pedig a lista első eleme. 
-- a kiválogatás is felfogható feltételes összegzésként: A nullelem az üres lista, a művelet pedig a listák egymás után fűzése (konkatenációja).
-
-Azért tanulunk mégis új tételeket ezekre, mert az implementáció során az összegzésszerű megvalósítás nem elég hatékony memória vagy sebesség szempontjából.
-
+- Összegzés $\circ$ Kiválogatás: Adjuk össze a lista megadott feltételnek megfelelő elemeit
+- Összegzés[Csoportosításos]: A megadott feltételek alapján csoportosítsuk a lista elemeit és számoljuk ki mindegyik csoport összegét!
 
 ## Implementációk
 ### C# Implementáció

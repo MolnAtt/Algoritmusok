@@ -81,9 +81,14 @@ Függvény vége.
 ```
 ### Észrevételek:
 - Az algoritmus működik üres listával is; ilyenkor üres lista a válasz.
-
+### Összeépítések más programozási tételekkel
+- Megszámlálás $\circ$ Kiválogatás: *Hány páros szám van a sorozatban?*
+- Összegzés $\circ$ Kiválogatás: *Add meg a páros számok összegét!*
+- Kiválogatás[Csoportosítás]: *A megadott feltételek alapján csoportosítsuk a lista elemeit és hagyjuk el azokat, amelyek elemszáma nem éri el a 10-et!*
+- Megszámlálás[Csoportosítás $\circ$ Kiválogatás]: *A megadott feltételek alapján csoportosítsuk a lista pozitív elemeit aszerint, hogy milyen számjegyre végződnek, és mondjuk meg, melyik csoportban hányan vannak!*
 
 ## Összeépítések más programozási tételekkel
+
 ## Implementáció
 ### C#
 ```cs

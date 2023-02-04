@@ -13,7 +13,10 @@ Hasonló változatok még:
 
 ## Specifikáció
 
-A specifikáció során feltesszük, hogy az értékszorton létezik egy <-vel jelölt szigorú totális rendezés.
+A feladat előfeltételekkel bír.
+
+- Feltesszük, hogy az értékszorton létezik egy <-vel jelölt szigorú totális rendezés.
+- Feltesszük, hogy a lista nem üres.
 
 A maximális érték keresésekor a $t\mapsto \mathrm{max}\{ t[i] : i\in [0..\mathbf N_t)\}$ függvény kiszámítására keresünk algoritmust. Ez a függvény egyébként a tárgynyelven is definiálható.
 

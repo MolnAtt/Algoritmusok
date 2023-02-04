@@ -26,7 +26,7 @@ Függvény vége.
 - Megszámlálás $\circ$ Kiválogatás: *Hány páros szám van a sorozatban?*
 - Megszámlálás $\circ$ Kiválogatás $\circ$ Másolás: *Hány olyan szám van, amelyek négyzete háromszámjegyű?*
 - Megszámlálás[Csoportosítás]: *A megadott feltételek alapján csoportosítsuk a lista elemeit és számoljuk ki mindegyik csoport elemszámát!*
-
+- Összegzés[Csoportosításos]: A megadott feltételek alapján csoportosítsuk a lista elemeit és számoljuk ki mindegyik csoport összegét!
 
 ## Implementáció
 A magas szintű programozási nyelvekben a lista elemszámát általában a lista adatszerkezetébe mindig elmentik. Nagyon kevés nyelv van, ahol ez nem így történik. A Prolog nyelvben pl. vannak listák, de csak számítással deríthető ki a listák elemszáma. A megszámolás tétel jelentősége inkább az összeépítésekben rejlik. Illetve: A programozási tétel nem (ennyire) triviális akkor, amikor nem listákkal dolgozunk, hanem például valamilyen stream-mel, pl. a konzolra beírogatott számokkal vagy fájlokkal, amelyek mérete nem tudható előre. 

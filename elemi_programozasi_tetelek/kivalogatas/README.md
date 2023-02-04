@@ -55,7 +55,10 @@ $$ \mathrm{Elhagy}_\varphi(t_1,t,t_2) \overset{\mathrm{def}}{\iff} (\forall i \i
 
 $$ \mathrm{szmn}_{\varphi}(t_1,t,t_2) \overset{\mathrm{def}}{\iff} (\forall i,j \in [0..\mathbf{N}_{t}))$$ 
 
-$$((i<j \land \varphi(t_1[i]) \land \varphi(t_1[j]) )\rightarrow t[i]<t[j])$$
+$$((i<j \land \varphi(t_1[i]) \land \varphi(t_1[j]) )
+$$
+
+$$\rightarrow t[i]<t[j])$$
 
 
 $$ \mathrm{Kivalogatas}_\varphi(t_1) = t_2 \overset{\mathrm{def}}{\iff} 

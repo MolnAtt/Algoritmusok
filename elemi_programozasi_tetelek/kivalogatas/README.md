@@ -55,7 +55,7 @@ $$ \mathrm{Elhagy}_\varphi(t_1,t,t_2) \overset{\mathrm{def}}{\iff} (\forall i \i
 
 $$ \mathrm{szmn}_{\varphi}(t_1,t,t_2) \overset{\mathrm{def}}{\iff} (\forall i,j \in [0..\mathbf{N}_{t}))$$ 
 
-$$ i<j \land $$
+$$ i<j \land X $$
 
 $$\varphi (t_1[i]) \land $$
 

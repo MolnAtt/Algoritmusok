@@ -56,12 +56,15 @@ $$
     \quad |\quad    \tau_{i} = \tau_{j}
     \quad |\quad    \tau_{e_1} = \tau_{e_2}
     \quad |\quad    \mathbf{[]}(t, \tau_{i}, \tau_{e})
+    \quad |\quad    \mathbf{[]}(t, \tau_{i}, \tau_{i})
     \quad |\quad    \lnot \varphi
     \quad |\quad    \varphi \land \psi    
     \quad |\quad    (\exists t) \varphi
     \quad |\quad    (\exists i) \varphi
     \quad |\quad    (\exists e) \varphi
 $$
+
+Megjegyezzük, hogy a tömbök értékei az indexelésre szolgáló indexek is lehetnek. Ez nagyban megkönnyíti a specifikációk írását (lásd: kiválogatás).
 
 ### Axiómák
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -35,6 +36,12 @@ namespace ConsoleApp1
             }
             Console.WriteLine();
             foreach (double elem in Masolas2(l.ToArray()))
+            {
+                Console.Write(elem);
+                Console.Write(" ");
+            }
+            Console.WriteLine();
+            foreach (double elem in l.Select(x=> x*x))
             {
                 Console.Write(elem);
                 Console.Write(" ");

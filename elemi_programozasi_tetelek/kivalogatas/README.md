@@ -45,7 +45,7 @@ $$
 A Kivalogatas definíciójaként álló formula lent azt mondja, hogy létezik egy $t$ kapcsolat a két tömb indexei között, hogy 
 
 - $t$ ráképezi $t_1$-et $t_2$-be
-    $$ \mathrm{Rakepez}(t_1, t, t_2)$$
+$$ \mathrm{Rakepez}(t_1, t, t_2)$$
 
 - $t$ pontosan azokon a helyeken veszi fel a $t_2$ tömb méretét (így szimulálva azt, hogy nem válogatja ki), ahol $t_1$ nem $\varphi$-tulajdonságú értéket vesz fel. 
 
@@ -53,9 +53,7 @@ $$ \mathrm{Elhagy}_\varphi(t_1,t,t_2) \overset{\mathrm{def}}{\iff} (\forall i \i
 
 - A $t$ által létrehozott összeköttetés monoton növekvő abban az értelemben, hogy az összekapcsolt indexpárok közt a kisebb kezdőpontú kisebb végpontú.
 
-$$ \mathrm{szmn}_\varphi(t_1,t,t_2) \overset{\mathrm{def}}{\iff} (\forall i,j \in [0..\mathbf N_{t}))
-((i<j \land \varphi(t_1[i]) \land \varphi(t_1[j]) )\rightarrow t[i]<t[j])
-$$
+$$ \mathrm{szmn}_\varphi(t_1,t,t_2) \overset{\mathrm{def}}{\iff} (\forall i,j \in [0..\mathbf N_{t}))((i<j \land \varphi(t_1[i]) \land \varphi(t_1[j]) )\rightarrow t[i]<t[j])$$
 
 
 $$ \mathrm{Kivalogatas}_\varphi(t_1) = t_2 \overset{\mathrm{def}}{\iff} 

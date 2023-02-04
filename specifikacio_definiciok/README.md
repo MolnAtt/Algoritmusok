@@ -98,9 +98,17 @@ Az elemlekérdezés kétargumentumú, második argumentumában parciális függv
 
 E jelölésben könnyebben olvasható alakban is felírhatók az axiómák:
 
-1. $ i \in {[}0..\mathbf N_{t}) \leftrightarrow (\exists e) t[i] = e$
-2. $ t_1=t_2 \land i_1 = i_2 \land t_1[i_1]= e_1 \land t_2[i_2] = e_2 \rightarrow e_1 = e_2$ (ebben a jelölésben ez ugye triviális)
-3. $\mathbf{N}_{t_1} = \mathbf{N}_{t_2} \rightarrow (t_1=t_2 \leftrightarrow (\forall i \in {[}0..\mathbf{N}_{t_1})) (t_1[i] = t_2[i] )$
+1. A tömbök a méretükön belül mindenhol vesznek fel értéket.
+
+$$ i \in {[}0..\mathbf N_{t}) \leftrightarrow (\exists e) t[i] = e$$
+
+2. Elemlekérdezés parciális függvény: 
+
+$$ t_1 = t_2 \land i_1 = i_2 \land t_1[i_1]= e_1 \land t_2[i_2] = e_2 \rightarrow e_1 = e_2$$
+
+3. Tömbök extenzionalitása:
+
+$$\mathbf{N}_{t_1} = \mathbf{N}_{t_2} \rightarrow (t_1=t_2 \leftrightarrow (\forall i \in {[}0..\mathbf{N}_{t_1})) (t_1[i] = t_2[i] )$$
 
 ### Korolláriumok
 

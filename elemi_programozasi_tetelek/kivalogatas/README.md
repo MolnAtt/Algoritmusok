@@ -16,23 +16,23 @@ Ehhez ún. ráképezőtömböket fogunk alkalmazni. Ezek lényegében olyan töm
 Azt mondjuk hogy egy $t_1$ tömböt a $t$ tömb ráképezi $t_2$ tömbbe, ha 
 - $t_1$ nagyobb vagy egyenlő méretű $t_2$-vel
 
-    $$ \mathbf N_{t_1} \geq \mathbf N_{t_2} $$
+$$ \mathbf N_{t_1} \geq \mathbf N_{t_2} $$
 
 - $t_1$ és $t$ ugyanakkora
 
-    $$ \mathbf N_{t_1} = \mathbf N_t $$
+$$ \mathbf N_{t_1} = \mathbf N_t $$
 
 - $t$ minden értéke kisebb vagy egyenlő, mint $t_2$ mérete.
 
-    $$ A(t, t_2) \overset{\mathrm{def}}{\iff} (\forall i \in [0..\mathbf N_{t})) t[i]\leq \mathbf N_{t_2}$$
+$$ A(t, t_2) \overset{\mathrm{def}}{\iff} (\forall i \in [0..\mathbf N_{t})) t[i]\leq \mathbf N_{t_2}$$
 
 - $t_2$ minden $e$ értékéhez olyan $i_2$ index tartozik, amelyet $t$ felvesz egy olyan $i_1$ indexen, amelyen $t_1$ ugyanezt az $e$ értéket veszi fel.
 
-    $$ B(t_1, t, t_2)\overset{\mathrm{def}}{\iff} (\forall i_2 \in [0..\mathbf N_{t_2}))  (\exists i_1 \in [0..\mathbf N_{t_1}))  t[i_1] = i_2 \land t_1[i_1] = t_2[i_2]  $$
+$$ B(t_1, t, t_2)\overset{\mathrm{def}}{\iff} (\forall i_2 \in [0..\mathbf N_{t_2}))  (\exists i_1 \in [0..\mathbf N_{t_1}))  t[i_1] = i_2 \land t_1[i_1] = t_2[i_2]  $$
 
 - $t$ minden $i$ helyen vagy $t_2$ méretét veszi fel, vagy pedig olyan $t[i]$ értékű, hogy azon a helyen $t_2[t[i]]$ megegyezik $t_1[i]$-gyel.
     
-    $$ C(t_1, t, t_2) \overset{\mathrm{def}}{\iff} (\forall i_1 \in [0..\mathbf N_{t_1}]) (t[i_1] = \mathbf N_{t_2} \lor t_1[i_1] = t_2[t[i_1]]  ) $$
+$$ C(t_1, t, t_2) \overset{\mathrm{def}}{\iff} (\forall i_1 \in [0..\mathbf N_{t_1}]) (t[i_1] = \mathbf N_{t_2} \lor t_1[i_1] = t_2[t[i_1]]  ) $$
 
 $$\mathrm{Rakepez}(t_1, t, t_2) \overset{\mathrm{def}}{\iff} 
         \mathbf N_{t_1} \geq \mathbf N_{t_2} 

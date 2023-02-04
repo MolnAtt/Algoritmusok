@@ -29,7 +29,7 @@ $$
 $$\mathrm{Osszeg}([e|t]) \overset{\mathrm{def}}{=} e +\mathrm{Osszeg}(t)$$
 
 
-(*Itt most el van kenve egy béta-függvény lemma.*)
+(*Itt most el van kenve egy $\beta$-függvény lemma.*)
 ## Algoritmus
 ```
 Függvény Összeg(t: Tömb[Szám]): Szám

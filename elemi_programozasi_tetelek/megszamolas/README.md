@@ -1,4 +1,4 @@
-# Maximumkeresés
+# Megszámlálás
 
 ## Típusfeladat
 Hány eleme van a listának?

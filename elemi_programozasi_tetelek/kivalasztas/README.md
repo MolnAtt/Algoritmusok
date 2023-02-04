@@ -47,8 +47,6 @@ Függvény vége.
 ### Összeépítések más programozási tételekkel
 - Kiválasztás[Csoportosítás]: *A megadott feltételek alapján csoportosítsuk a lista elemeit és adjuk meg mindegyikben az első negatív elemet (amelyből biztosan lesz egy mindegyik csoportban)*
 
-## Összeépítések más programozási tételekkel
-
 ## Implementáció
 ### C#
 #### Első helyének kiválasztása

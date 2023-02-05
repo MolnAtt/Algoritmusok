@@ -20,7 +20,7 @@ Az elemi listakezelési feladatok problémamegoldás szempontjából két fő cs
 
 ### Rendezetlen halmazok programozási tételei
 - [Ismétlődések eltávolítása](rendezetlen_halmazok_tetelei/ismetlodesek_eltavolitasa/) (unique)
-- Elemvizsgálat -> Eldöntés
+- Elemvizsgálat -> [Eldöntés](elemi_programozasi_tetelek/kereses/)
 - Részhalmazvizsgálat -> Eldöntés
 - Unió
 - Metszet

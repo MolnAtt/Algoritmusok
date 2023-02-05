@@ -7,7 +7,7 @@ namespace ConsoleApp1
     internal class Program
     {
 
-        static List<double> Ismetlodesmentes1(List<double> lista)
+        static List<double> Ismetlodesmentes(List<double> lista)
         {
             List<double> result = new List<double>();
             foreach (double elem in lista)
@@ -20,28 +20,34 @@ namespace ConsoleApp1
             return result;
         }
 
-        static List<double> Ismetlodesmentes2(List<double> lista)
+
+
+        static List<double> IsmetlodesmentesRendezettListabol(List<double> rlista)
         {
-            List<double> rendezett= new List<double>(lista);
-            if (lista.Count < 2)
+
+            if (rlista.Count<2)
             {
-                return rendezett;
+                return new List<double>(rlista);
             }
 
-            rendezett.Sort();
+            List<double> result = new List<double>(rlista.Count);
 
-            List<double> result = new List<double>(rendezett.Count);
-            result.Add(rendezett[0]);
-
-            for (int i = 1; i < rendezett.Count; i++)
+            result.Add(rlista[0]);
+            for (int i = 1; i < rlista.Count; i++)
             {
-                if (rendezett[i-1] != rendezett[i])
+                if (rlista[i - 1] != rlista[i])
                 {
-                    result.Add(rendezett[i]);
+                    result.Add(rlista[i]);
                 }
             }
 
             return result;
+        }
+        static List<double> RendezettIsmetlodesmentes(List<double> lista)
+        {
+            List<double> rlista = new List<double>(lista);
+            rlista.Sort();
+            return IsmetlodesmentesRendezettListabol(rlista);
         }
 
         static List<double> Ismetlodesmentes3(List<double> lista) => lista.ToHashSet().ToList();
@@ -50,8 +56,8 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             List<double> l = new List<double> {5, 5, 3, 2, 3, 4, 5, 6, 6, 5, 5, 5, 3, 2};
-            Console.WriteLine(string.Join(", ", Ismetlodesmentes1(l)));
-            Console.WriteLine(string.Join(", ", Ismetlodesmentes2(l)));
+            Console.WriteLine(string.Join(", ", Ismetlodesmentes(l)));
+            Console.WriteLine(string.Join(", ", RendezettIsmetlodesmentes(l)));
             Console.WriteLine(string.Join(", ", Ismetlodesmentes3(l)));
             Console.WriteLine(string.Join(", ", Ismetlodesmentes4(l)));
         }

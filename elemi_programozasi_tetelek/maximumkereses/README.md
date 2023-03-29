@@ -105,13 +105,11 @@ static double Maximum(List<double> lista)
 ```cs
 static int Maximum_indexe(List<double> lista)
 {
-    double max = lista[0];
     int maxi = 0;
     for (int i = 1; i < lista.Count; i++)
     {
-        if (max < lista[i])
+        if (lista[maxi] < lista[i])
         {
-            max = lista[i];
             maxi = i;
         }
     }

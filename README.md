@@ -33,13 +33,13 @@ Az elemi listakezelési feladatok problémamegoldás szempontjából két fő cs
 A rendezések sebesség szempontjából két fő csoportra bonthatók:
 
 - Lassú rendezések: egy $n$ elemű $n^2$ idő alatt rendeznek.
-    - Maximumkiválasztásos rendezés (selection sort)
-    - Buborékos rendezés (bubble sort)
-    - Beszúró rendezés (insertion sort)
+    - [Minimumkiválasztásos rendezés](rendezesek/minimum/) (selection sort)
+    - [Buborékos rendezés](rendezesek/buborek/) (bubble sort)
+    - [Beszúró rendezés](rendezesek/beszuro/) (insertion sort)
     - Héjrendezés (shell sort)
 - Gyorsabb rendezések: egy $n$ elemű tömböt $n\cdot \log_2 n$ idő alatt rendeznek. 
-    - Gyorsrendezés (quick sort)
-    - Összefésüléses rendezés (merge sort)
+    - [Gyorsrendezés](rendezesek/gyors/) (quick sort)
+    - [Összefésüléses rendezés](rendezesek/merge/) (merge sort)
     - Kupac-rendezés (heap sort)
 
 ### Keverések
@@ -76,8 +76,19 @@ A rendezések sebesség szempontjából két fő csoportra bonthatók:
 - Eldöntés
 
 ## Gráfalgoritmusok
-- Szélességi bejárás
-- Mélységi bejárás
+- Programozási tételek gráfokon (szélességi (breadth first search, BFS) és mélységi bejárás (Depth first search, DFS))
+    - Amikor végig kell nézni a gráfot:
+        - Összesítések
+        - Csoportosítás
+        - Kiválogatás
+    - És amikor nem:
+        - Eldöntés
+        - Keresés    
+- Feszítőfák
+    - Szélességi és mélységi bejárás feszítőfája (honnan-vektor)
+    - Kruskal-algoritmus
+    - Jarník-Prim algoritmus
 - Legrövidebb út
-- Dijkstra-algoritmus
-- Floyd-Warshall-algoritmus
+    - Szélességi bejárással (honnan-vektor)
+    - Dijkstra-algoritmus
+    - Floyd-Warshall-algoritmus

@@ -15,23 +15,20 @@ A könnyebb olvashatóság érdekében két függvényre bontjuk:
 
 
 ```
-Függvény Helyére_mozgat(t: Tömb, i:Egész, j:Egész):Egész
+Függvény Helyére_tesz(t: Tömb, i:Egész, j:Egész) : Egész
     Ciklus amíg nem i=j:
-        Ha vagy i<j vagy lista[i], lista[j]:     { kizáró vagy! }
-            Csere(lista[i], lista[j])
+        Ha i<j nem ekvivalens t[i]<t[j]:     { kizáró vagy! }
+            Csere(t[i], t[j])
             Csere(i, j)
         Elágazás vége
-        Ha i < j:
-            j := j-1
-        egyébként 
-            j := j+1
-    Helyére_mozgat = i;
+        j := j + (-1 ha i<j egyébként 1)
+    Helyére_tesz = i;
 Függvény vége.
 ```
 
 ```
 Eljárás Rendez(t: Tömb)
-    Rendez(t, 0, t.Hossz)
+    Rendez(t, 1, t.Hossz)
 Eljárás vége.
 ```
 
@@ -40,7 +37,7 @@ Eljárás Rendez(t: Tömb, e:Egész, v: Egész)
     Lokális:
         hely: Egész
     Ha e < v:
-        hely := Helyére_mozgat(t, e, v)
+        hely := Helyére_tesz(t, e, v)
         Rendez(t, e, hely-1)
         Rendez(t, hely+1, v)
     Elágazás vége.

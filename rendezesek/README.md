@@ -43,7 +43,7 @@ $$(\forall{a,b\in H}) \ ((a\leq b \land b\leq a) \to a = b )$$
 
 ## Algoritmusok
 
-Mindegyik rendezés része a listán belüli csere: 
+A legtöbb rendezés része a listán belüli csere: 
 
 ```
 Eljárás Csere(t: Tömb, i:Egész, j:Egész)
@@ -53,6 +53,22 @@ Eljárás Csere(t: Tömb, i:Egész, j:Egész)
     t[i] := t[j]
     t[j] := temp
 Eljárás vége.
+```
+Amennyiben két paraméterrel hívjuk meg, akkor a két változó értékét cseréljük meg
+
+```
+Eljárás Csere(a,b)
+    Lokális:
+        temp
+    temp := a
+    a := b
+    b := temp
+Eljárás vége.
+```
+Ez utóbbit jelöljük néha így is: 
+
+```
+(a,b) := (b,a)
 ```
 
 A rendezési algoritmusok sebesség szempontjából két fő csoportra bonthatók:

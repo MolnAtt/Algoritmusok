@@ -268,44 +268,42 @@ A bejárási stratégiák abban különböznek, hogy az új bevett csúcsot mi a
 ### Szélességi és mélységi bejárás
 A szélességi bejárás csak abban különbözik egymástól, hogy vermet vagy sort használunk-e tárolónak. Ezért az algoritmusban csak Tárolóként hivatkozunk rájuk
 
+A bejárások nagyon különböznek aszerint, hogy keresési, kiválogatási, összegzési, maximumkiválasztási, legrövidebb út keresési fealdatokat oldunk-e meg velük. De a közös rész hasonló, ezért a következőkben egyalgoritmus-sémát osztunk csak meg, és a későbbiekben tárgyaljuk csak a specifikus algoritmusokat.
 ```
-Függvény El_lehet_e_jutni(graf:Graf, innen:Egész, ide:Egész): Logikai
+Függvény Bejárás(innen:Egész, ...): ...
+    Globális: 
+        N: Egész  # csúcsok száma
+        Szomszédai: Egész - Tömb[Egész]  # csúcsok szomszédait visszaadó függvény
     Lokális:
-        fehér:Egész
-        szürke:Egész
-        fekete:Egész
-        tennivalok: Verem
-        szin:Tömb[Egész]
-        tennivalo: Egész
+        tennivalok: Tároló
+        allapot: Tömb[Egész]
+        feldolgozando: Egész
+    -----------------------
+    INICIALIZÁLÁS
 
-    fehér := 0
-    szürke := 1
-    fekete := 2
+    tennivalok := új Verem[Egész]{innen}
+    allapot := új Tömb[Egész](N db 0) 
+    allapot[innen] := 1
 
-    szin := új Tömb[Egész](graf.Csúcsszama)
-    tennivalok := új Verem
+    ... EGYÉB INICIALIZÁLÁSOK ...
+    -----------------------
+    Ciklus amíg nem tennivalók.Üres:
+        feldolgozando := tennivalok.Kivesz()
 
-    tennivalok.Beletesz(innen)
-    szin[innen] := szürke
+        ... CSÚCS FELDOLGOZÁSA(feldolgozando) ...
+        allapot[feldolgozando] := 2
 
-    El_lehet_e_jutni := Hamis
 
-    Ciklus amíg nem El_lehet_e_jutni és nem tennivalók.Üres():
-        tennivalo := tennivalok.Kivesz()
-
-        Ha feldolgozando = ide:
-            El_lehet_e_jutni := Igaz
-            szin[feldolgozando] := fekete
-        Egyébként:
-            Iteráció szomszéd eleme graf.szomszédai[tennivalo]:
-                Ha szín[szomszéd]= fehér:
-                    tennivalok.Beletesz(szomszéd)
-                    szin[szomszéd] := szürke
-                Elágazás vége
-            Iteráció vége
-        Elágazás vége
+        Iteráció sz eleme Szomszédai(innen):
+            Ha allapot[sz] = 0:
+                ... ÉL FELDOLGOZÁSA (feldolgozando, sz) ...
+                tennivalok.Beletesz(sz)
+                atmenet[sz] := szürke
+            Elágazás vége
+        Iteráció vége        
     Ciklus vége
 
+... EREDMÉNY VISSZAADÁSA ... 
 
 Függvény vége.
 

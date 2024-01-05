@@ -214,8 +214,19 @@ Gráfnak nevezzük azon $(M, T)$ rendezett párokat, ahol
 
 A szomszédsági listák arról szóló beszámolók, hogy egy csúcsnak mely más csúcsok a szomszédai. Tehát ez egy "listában-a-lista"-szerkezet lesz, ahol az $i$-edik lista $j$-edik eleme egy csúcs sorszáma, amely szomszédja $i$-nek. 
 
+### Informális definíció
 
-###
+Egy csúcslistás vagy szomszédsági listás reprezentációhoz a csúcsokról szóló információn túl egyetlen listában-a-lista szerkezetre van szükség, ahol 
+- a tartalmazott listákban mind különböző számok vannak, és 
+- mindegyik tartalmazott lista csak kisebb természetes számokat tartalmaz, mint ahány lista van összesen. 
+
+
+### Példa mesteres formátumra
+Mivel a mesteren konzolról olvasunk be, tudni kell, hogy hány csúcs (és ebben az esetben hány belső lista) van összesen.
+
+A fenti, levelezős példában ez a következőképpen nézhetne ki egy mesteres feladatban:
+
+
 
 ## Algoritmusok
 

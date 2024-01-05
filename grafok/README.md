@@ -226,7 +226,25 @@ Mivel a mesteren konzolról olvasunk be, tudni kell, hogy hány csúcs (és ebbe
 
 A fenti, levelezős példában ez a következőképpen nézhetne ki egy mesteres feladatban:
 
+```
+5 
+1
+2 3
+3 4
+2
+2 0
+Laci
+Móni
+Eszti
+Sanyi
+Cecília
+```
+Tehát a lényeg az, hogy az 5-ös számot követő $i$i-edik sorban azon csúcsok sorszámai állnak, amelyek szomszédai az $i$-edik csúcsnak. 
 
+### Matematikai definíció
+Ez alapján egy szomszédsági listájával megadott gráf alatt olyan rendezett $(S, T)$ párt értünk, ahol 
+- $ X \in S \iff X \subseteq {[}1..N{]}$, ahol $N$ a csúcsok száma, azaz az $S$ halmaz számossága
+- $T$ pedig egy $N$ elemű tömb
 
 ## Algoritmusok
 

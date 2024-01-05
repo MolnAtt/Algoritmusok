@@ -248,9 +248,25 @@ Ez alapján egy szomszédsági listájával megadott gráf alatt olyan rendezett
 
 ## Algoritmusok
 
+A gráfokkal kapcsolatos algoritmusok azok, amelyek a gráfokon való munka során kihasználják a gráf belső szerkezetét -- az éleket. 
 
+A gráfalgoritmusok bejárása, a gráfok csúcsainak feldolgozása mindig úgy működik, hogy 
+- egy csúcsot feldolgozunk, és aztán 
+- a következő feldolgozandó csúcs mindig csak egy más fedolgozott csúcs szomszédja lehet csak. 
+
+A bejárási stratégiák abban különböznek, hogy az új bevett csúcsot mi alapján választjuk ki. 
+
+- Szélességi bejárásnak (Breadth first search, BFS)nevezzük azt a bejárást, amikor azt a csúcsot dolgozzuk fel a feldolgozhatók közül, amelyik a legrégebbóta vár a sorára, azaz amely számára a legelőször vált lehetővé a feldolgozhatóság. A szélességi bbejárás során a soron következő csúcsok mindig a kiinduló csúcshoz lehető legközelebb eső csúcsok. A fenti okok miatt a feldolgozandó csúcsok egy Sor adatszerkezetben várnak majd mindig a sorukra, hogy feldolgozásra kerüljenek.
+- Mélységi bejárásnak (Depth first search, DFS) nevezzük azt a bejárást, amikor aztacsúcsot dolgozzuk fel a feldolgozhatók közül, amelyik a legfrissebben került a feldolgozható csúcsok közé. A fenti okok miatt a feldolgozandó csúcsok ilyenkor mindig egy Verem adatszerkezetben tárolódnak majd, míg feldolgozásra nem kerülnek.
+- Mohó bejárásnak nevezzük azt, amikor azt a csúcsot dolgozzuk fel a feldolgozhatók közül, amely amelyik valamilyen szempont szerint a legoptimálisabb választás. Az iménti okok miatt a feldolgozásra váró csúcsok mindig egy kupac/prioritási sor adatszerkezetben várnak majd mindiga feldolgozásra. Ilyenkor gyakran az egyelőre elérhetetlen csúcsokat is az adatszerkezetben tároljuk, végtelenül rossz prioritással súlyozva őket. 
+
+### Mikor melyiket érdemes használni?
+- Mohó bejárást használunk a súlyozott gráfokon legrövidebb élösszeget (legrövidebb útvonalat) kereső Dijkstra algoritmusban
+- Szélességi bejárást használunk olyankor, amikor a bejárás megszakítható korábban és a megoldást a kiindulóponthoz közel keressük. Ilyen például az, amikor a nem súlyozott gráfokon keresünk legrövidebb útvonalat! 
+- Mélységi bejárást használunk akkor, amikor a bejárás korábban is megszakítható és a megoldást a kiinduló csúcstól távol keressük -- hiszen a mélységi bejárás rögtön megpróbál távoli pontokhoz eljutni, ahol ha talál megoldást, előbb végez. Ha például tudjuk, hogy egy gráfban a kiindulási ponttól legalább 9 lépésre kell menni, hogy a keresés befejeződhessen, akkor egy DFS keresés ezt akár 9 lépés után is képes megtalálni. Ugyanezt a csúcsot a BFS stratégia csak azután tudja megtalálni, hogy már minden legfeljebb 8 lépésre lévő csúcsot feldolgozott!
 
 ### Szélességi és mélységi bejárás
+A szélességi bejárás csak abban különbözik egymástól, hogy vermet vagy sort használunk-e tárolónak. Ezért az algoritmusban csak Tárolóként hivatkozunk rájuk
 
 ```
 Függvény El_lehet_e_jutni(graf:Graf, innen:Egész, ide:Egész): Logikai

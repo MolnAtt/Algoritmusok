@@ -218,7 +218,39 @@ Adj meg egy, az adott pontot gyökérként tartalmazó feszítőfát!
 ### Legrövidebb út (súlyozatlan gráfban)
 Add meg az adott pontból elérhető P tulajdonságú elemhez vezető legrövidebb utat és az oda vezető út hosszát!
 
-### Dijkstra (súlyozott gráf!)
-Add meg az adott pontból bármely más pontba vezető legrövidebb utak hosszát és az oda vezető útvonalakat!
+### Legrövidebb távolságok (súlyozott gráf!)
+#### Kitűzés: 
+Add meg az adott pontból bármely más pontba vezető legrövidebb utak hosszát!
+#### Specifikáció
 
+#### Megoldás
+
+0. LOKÁLIS VÁLTOZÓK: $\varnothing$
+1. PARAMÉTEREK: $\varnothing$
+2. VISSZATÉRÉSI_TÍPUS: ``Tömb[Szám]``
+3. EGYÉB INICIALIZÁLÁS: $\varnothing$
+4. CSÚCS FELDOLGOZÁSA: $\varnothing$
+5. ÉL FELDOLGOZÁSA: $\varnothing$
+6. EREDMÉNY FELDOLGOZÁSA: ``vissza táv``
+
+
+### Mohó feszítőfa (súlyozott gráf!)
+#### Kitűzés: 
 Add meg az adott pontból bármely más pontba vezető legrövidebb útvonalakat!
+#### Specifikáció
+
+#### Megoldás
+0. LOKÁLIS VÁLTOZÓK: ``feszitofa: Tömb[Egész]``
+1. PARAMÉTEREK: $\varnothing$
+2. VISSZATÉRÉSI_TÍPUS: ``Tömb[Egész]``
+3. EGYÉB INICIALIZÁLÁS: 
+    ```
+    feszitofa := új Tömb[Egész](N db -2)
+    feszitofa[innen] := -1
+    ```
+4. CSÚCS FELDOLGOZÁSA: $\varnothing$
+5. ÉL FELDOLGOZÁSA: ``feszitofa[sz.csucs] := feldolgozando``
+6. EREDMÉNY FELDOLGOZÁSA: ``vissza feszitofa``
+
+
+

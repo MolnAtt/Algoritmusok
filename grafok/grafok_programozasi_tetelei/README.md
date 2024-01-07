@@ -133,7 +133,7 @@ Függvény Mohó_Bejárás(innen:Egész, PARAMÉTEREK): VISSZATÉRÉSI_TÍPUS
 
         Iteráció sz eleme Szomszédai(innen):
             rivalis_rang := tav[tennivalo] + sz.suly
-            Ha rivalis_rang < tav[sz]
+            Ha rivalis_rang < tav[sz.csucs]
                 tav[sz.csucs] := rivalis_rang
                 tennivalok.Javítás(sz.suly)
                 

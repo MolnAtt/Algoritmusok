@@ -8,8 +8,10 @@
         - Példa súlyozott gráfra: [Ősagárd környéke](#példa-súlyozott-gráfra)
     4. [Többszörös élek, színezések, hurokélek, izolált csúcsok](#többszörös-élek-színezések-hurokélek-izolált-csúcsok)
         - Példa színezésre, többszörös élre, hurokra és izolált csúcsra: [Közlekedés a László körül](#példa-színezésre-hurokélre-izolált-csúcsra-többszörös-élre)
-2. [Gráfreprezentációk](grafreprezentaciok/): A három fő reprezentáció
-3. [Algoritmusok](algoritmusok): A főbb gráfokhoz kapcsolódó programozási tételek
+    5. [Út, kör, összefüggőség, komponensek](#út-kör-összefüggőség-komponens)
+    6. [Fák és erdők](#fák-és-erdők)
+2. [Gráfreprezentációk](grafreprezentaciok/). A három fő reprezentáció
+3. [Algoritmusok](grafok_programozasi_tetelei). A főbb gráfokhoz kapcsolódó programozási tételek
 
 ## Gráfok nem formálisan
 
@@ -63,76 +65,67 @@ A fenti, közlekedéshez hasonló példában is elképzelhetőek akár olyan él
 
 Példa lenne egy hurokélre az, amikor egy városnéző buszra ha felszáll az ember, akkor könnyen lehet, hogy ugyanoda érkezik meg a busz, mint ahonnan elindult, hiszen nem közlekedési céllal történt az utazás, hanem városnézési céllal. A fenti példában egy népligetbeli biciklizés szolgál kicsit erőltetett példáként a hurokélre.
 
+#### Egyszerű gráf
+A többszörös élektől és huroktól mentes gráfokat **egyszerű gráfoknak** nevezzük. 
+
+A maximális élszámú egyszerű gráfokat **teljes gráfnak** nevezzük.
+
 #### Izolált csúcsok
 
 Az olyan csúcsokat, amelyek nincsenek semmilyen összeköttetésben más csúcsokkal, izolált csúcsoknak nevezzük. Ezekre a fenti példában azok a helyek lennének, ahova nem lehet az érintett járművekkel eljutni, például a Martinovics térre (Budapest e megállókhoz közel eső mértani középpontjába).
 
 
+#### Út, kör, összefüggőség, komponens, 
+Azt mondjuk, hogy két él csatlakozik egymáshoz, ha az egyik végpontja megegyezik a másik kezdőpontjával. Különböző élek olyan sorozatát, ahol a szomszédos élek különböző csúcsokon keresztül csatlakoznak egymáshoz, **út**nak mondjuk. 
 
-### Szomszédsági listák
+Az olyan utat, amelynek a kezdő és végpontja ugyanaz, **körnek** nevezzük. A hurokél így maga is egy kört alkot. 
 
+Ha egy gráfban bármely pontból vezet út bármely másik pontba, akkor a gráfot **összefüggőnek** nevezzük. 
 
-## Algoritmusok
+Egy pont **komponense** azon csúcsok halmaza, amelyekből a pont egy úton keresztül elérhető. 
 
-A gráfokkal kapcsolatos algoritmusok azok, amelyek a gráfokon való munka során kihasználják a gráf belső szerkezetét -- az éleket. 
+#### Fák és erdők
+A körmentes gráfokat **erdőknek**, az összefüggő erdőket pedig **fáknak** nevezzük. 
 
-A gráfalgoritmusok bejárása, a gráfok csúcsainak feldolgozása mindig úgy működik, hogy 
-- egy csúcsot feldolgozunk, és aztán 
-- a következő feldolgozandó csúcs mindig csak egy más fedolgozott csúcs szomszédja lehet csak. 
+Minden erdő előáll fák uniójaként.
 
-A bejárási stratégiák abban különböznek, hogy az új bevett csúcsot mi alapján választjuk ki. 
+Be lehet bizonyítani (nem nehéz), hogy a **minimális élszámú összefüggő gráfok** pontosan a **fák**. 
 
-- Szélességi bejárásnak (Breadth first search, BFS)nevezzük azt a bejárást, amikor azt a csúcsot dolgozzuk fel a feldolgozhatók közül, amelyik a legrégebbóta vár a sorára, azaz amely számára a legelőször vált lehetővé a feldolgozhatóság. A szélességi bbejárás során a soron következő csúcsok mindig a kiinduló csúcshoz lehető legközelebb eső csúcsok. A fenti okok miatt a feldolgozandó csúcsok egy Sor adatszerkezetben várnak majd mindig a sorukra, hogy feldolgozásra kerüljenek.
-- Mélységi bejárásnak (Depth first search, DFS) nevezzük azt a bejárást, amikor aztacsúcsot dolgozzuk fel a feldolgozhatók közül, amelyik a legfrissebben került a feldolgozható csúcsok közé. A fenti okok miatt a feldolgozandó csúcsok ilyenkor mindig egy Verem adatszerkezetben tárolódnak majd, míg feldolgozásra nem kerülnek.
-- Mohó bejárásnak nevezzük azt, amikor azt a csúcsot dolgozzuk fel a feldolgozhatók közül, amely amelyik valamilyen szempont szerint a legoptimálisabb választás. Az iménti okok miatt a feldolgozásra váró csúcsok mindig egy kupac/prioritási sor adatszerkezetben várnak majd mindiga feldolgozásra. Ilyenkor gyakran az egyelőre elérhetetlen csúcsokat is az adatszerkezetben tároljuk, végtelenül rossz prioritással súlyozva őket. 
+Be lehet továbbá azt is bizonyítani (szintén nem nehéz), hogy **a maximális élszámú egyszerű körmentes gráfok** is pontosan a **fák**. 
 
-### Mikor melyiket érdemes használni?
-- Mohó bejárást használunk a súlyozott gráfokon legrövidebb élösszeget (legrövidebb útvonalat) kereső Dijkstra algoritmusban
-- Szélességi bejárást használunk olyankor, amikor a bejárás megszakítható korábban és a megoldást a kiindulóponthoz közel keressük. Ilyen például az, amikor a nem súlyozott gráfokon keresünk legrövidebb útvonalat! 
-- Mélységi bejárást használunk akkor, amikor a bejárás korábban is megszakítható és a megoldást a kiinduló csúcstól távol keressük -- hiszen a mélységi bejárás rögtön megpróbál távoli pontokhoz eljutni, ahol ha talál megoldást, előbb végez. Ha például tudjuk, hogy egy gráfban a kiindulási ponttól legalább 9 lépésre kell menni, hogy a keresés befejeződhessen, akkor egy DFS keresés ezt akár 9 lépés után is képes megtalálni. Ugyanezt a csúcsot a BFS stratégia csak azután tudja megtalálni, hogy már minden legfeljebb 8 lépésre lévő csúcsot feldolgozott!
+Ez tehát ugyanarra a fogalomra három lehetséges definíció, a szakirodalomban néha változik is, hogy épp melyiket használják. 
 
-### Szélességi és mélységi bejárás
-A szélességi bejárás csak abban különbözik egymástól, hogy vermet vagy sort használunk-e tárolónak. Ezért az algoritmusban csak Tárolóként hivatkozunk rájuk
+Van egy negyedik lehetséges definíció is véges fákra: Be lehet végül azt is bizonyítani, hogy egy véges gráf pontosan akkor fa, ha felépíthető egyetlen csúcsból úgy, hogy minden alkalommal egy élet és egy hozzá csatlakozó új csúcsot fűzünk valahol a gráfhoz. 
 
-A bejárások nagyon különböznek aszerint, hogy keresési, kiválogatási, összegzési, maximumkiválasztási, legrövidebb út keresési fealdatokat oldunk-e meg velük. De a közös rész hasonló, ezért a következőkben egyalgoritmus-sémát osztunk csak meg, és a későbbiekben tárgyaljuk csak a specifikus algoritmusokat.
-```
-Függvény Bejárás(innen:Egész, ...): ...
-    Globális: 
-        N: Egész  # csúcsok száma
-        Szomszédai: Egész - Tömb[Egész]  # csúcsok szomszédait visszaadó függvény
-    Lokális:
-        tennivalok: Tároló
-        allapot: Tömb[Egész]
-        feldolgozando: Egész
-    -----------------------
-    INICIALIZÁLÁS
+Ez utóbbi alapján nem meglepő, hogy **egy véges fának mindig pontosan eggyel kevesebb éle van, mint csúcsa.**
 
-    tennivalok := új Verem[Egész]{innen}
-    allapot := új Tömb[Egész](N db 0) 
-    allapot[innen] := 1
+##### Irányított fák
 
-    ... EGYÉB INICIALIZÁLÁSOK ...
-    -----------------------
-    Ciklus amíg nem tennivalók.Üres:
-        feldolgozando := tennivalok.Kivesz()
+A fenti gráfalkotási eljárásban irányított éleket alkalmazva kapjuk az irányított fa fogalmát. Egy **irányított fa** tehát az a véges irányított gráf, amely előáll egy fenti gráfépítési eljárás eredményeképp (az új élnek mindig a végpontja az új csúcs). 
 
-        ... CSÚCS FELDOLGOZÁSA(feldolgozando) ...
-        allapot[feldolgozando] := 2
+###### Gyökér
+**Gyökérnek** nevezzük a gráfépítési eljárás kiindulópontját, azaz azt a csúcsot, amely nem végpontja semelyik élnek sem. 
 
+###### Szülő
+Egy csúcs **szülőjének** azt a csúcsot nevezzük, amelyhez a gráfépítés során csatlakoztattuk az új éllel, azaz: Egy csúcs szülője az a csúcs, amelyből megy él az előbbi csúcsba. 
 
-        Iteráció sz eleme Szomszédai(innen):
-            Ha allapot[sz] = 0:
-                ... ÉL FELDOLGOZÁSA (feldolgozando, sz) ...
-                tennivalok.Beletesz(sz)
-                atmenet[sz] := szürke
-            Elágazás vége
-        Iteráció vége        
-    Ciklus vége
+###### Levél
+**Levélnek** nevezzük azon csúcsokat, amelyből nem indul él. 
 
-... EREDMÉNY VISSZAADÁSA ... 
+A gráfépítési eljárás lehetőséget ad fák egy egyszerű reprezentációjára is. Vegyünk egy ilyen gráfalkotási eljárást, és egy tömbben jegyezzük fel, hogy az $i$. csúcsot melyik másik csúcshoz fűztük hozzá a faépítés során. Az így keletkező számtömbben egyetlen csúcsnak nem lesz így értéke (a gyökérnek, ami köré építettük a fát), legyen tehát az -1. Egy irányított fához csak pontosan egy ilyen tömb tartozik majd, és minden ilyen tömb egyértelműen meghatározza ezt az irányított fát is.
 
-Függvény vége.
+###### Feszítőfa
 
-```
+Egy tetszőleges gráfot "fává csupaszítva" kapjuk a gráf egy feszítőfáját. Tehát azt mondjuk, hogy az F a G gráf egy feszítőfája, ha 
+- F egy fa, 
+- F és G csúcsai megegyeznek, és 
+- F élei G-nek is élei.
 
-### Legrövidebb út
+A gráfok [bejárási algoritmusai](grafok_programozasi_tetelei/) mind fageneráló algoritmusok, így a szélességi bejárás ún. **szélességi feszítőfát** generál, a mélységi bejárás *mélységi feszítőfát*, a mohó bejárás pedig **mohó feszítőfát**.
+
+## Gráfreprezentációk és algoritmusok
+
+A gráfok különböző reprezentációiról szóló anyagokat [itt találod](grafreprezentaciok). 
+
+A gráfokkal kapcsolatos típusfeladatok megoldásait [itt találod](grafok_programozasi_tetelei/).
+

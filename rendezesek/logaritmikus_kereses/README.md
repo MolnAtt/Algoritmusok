@@ -26,5 +26,6 @@ Függvény Logaritmikusan_Helye(T:Tömb[Egész], x:Szám):Egész
         Egyébként
             Logaritmikusan_Helye := e
         Elágazás vége
+    Elágazás vége
 Függvénye vége.
 ```

@@ -1,11 +1,6 @@
 ## Algoritmus
 
 ```
-
-
-
-
-
 Függvény Logaritmikusan_Helye(T:Tömb[Egész], x:Szám):Egész
     Lokális változók:
         Egész e
@@ -16,12 +11,18 @@ Függvény Logaritmikusan_Helye(T:Tömb[Egész], x:Szám):Egész
     v:= T.Hossz
 
     Ciklus:
-        
-
-    Amíg ()
+        k:= (e+v) // 2  { egész értékű osztás, amely lefele kerekít }
+        Ha T[k] < x, akkor
+            e:= k+1 
+        Egyébként ha T[k] > x, akkor
+            v:= k-1
+        Elágazás vége
+    Amíg ( e<=v és T[k]!=x )
     Ciklus vége
-
-
+    Ha T[k]==x, akkor
+        Logaritmikusan_Helye := k
+    Egyébként
+        Logaritmikusan_Helye := e
+    Elágazás vége
 Függvénye vége.
-
 ```

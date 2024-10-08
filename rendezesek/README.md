@@ -57,6 +57,7 @@ Eljárás vége.
 
 A rendezési algoritmusok sebesség szempontjából két fő csoportra bonthatók:
 
+- [Logaritmikus keresés](logaritmikus_kereses): Egy $n$ elemű rendezett kömbben megkeresünk egy $P$ tulajdonságú elemet.
 - [Lassú rendezések](lassu_rendezesek): egy $n$ elemű tömböt $n^2$ idő alatt rendeznek.
     - [Minimumkiválasztásos rendezés](minimum/) (selection sort)
     - [Buborékos rendezés](buborek/) (bubble sort)

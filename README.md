@@ -55,6 +55,21 @@ A rendezések sebesség szempontjából két fő csoportra bonthatók:
 - Rendezett halmazok metszete
 - Rendezett halmazok különbsége
 
+## mátrixok programozási tételei
+
+- Amikor végig kell nézni a mátrixot: 
+    - Összesítések (reduce)
+        - [Megszamolás](matrix/megszamolas/) (count)
+        - [Összegzés](matrix/osszegzes/) (sum)
+        - [Maximumkeresés](matrix/maximumkereses/) (max)
+    - [Másolás](matrix/masolas/) (map, select)
+    - [Kiválogatás](matrix/kivalogatas/) (filter, where)
+    - [Csoportosítás](matrix/csoportositas/) (group by)
+- És amikor nem: 
+    - [Kiválasztás](matrix/kivalasztas/)
+    - [Keresés](matrix/kereses/)
+    - [Eldöntés](matrix/kereses/) 
+
 ## Kiválasztási függvények programozási tételei 
 - Visszalépéses eldöntés
 - Visszalépéses keresés
